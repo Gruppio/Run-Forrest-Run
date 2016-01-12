@@ -12,14 +12,24 @@ import Foundation
 struct Command {
     var executor:   Executor
     var arguments:  [String]
+    var input:      String?
     
-    init(arguments: [String], executor: Executor) {
+    init(arguments: [String], executor: Executor, input: String?) {
         self.arguments  = arguments
         self.executor   = executor
+        self.input      = input
+    }
+    /*
+    init(_ arguments: [String], executor: Executor) {
+        self.init(arguments: arguments, executor: executor, input: nil)
+    }*/
+    
+    init(_ arguments: String..., executor: Executor, input: String?) {
+        self.init(arguments: arguments, executor: executor, input: input)
     }
     
     init(_ arguments: String..., executor: Executor) {
-        self.init(arguments: arguments, executor: executor)
+        self.init(arguments: arguments, executor: executor, input: nil)
     }
 }
 

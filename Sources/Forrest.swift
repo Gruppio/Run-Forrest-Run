@@ -21,7 +21,7 @@ public class Forrest {
     
     func run(arguments: String...) -> String? {
         do {
-            return try Command(arguments: arguments, executor: executor).execute().stdout
+            return try Command(arguments: arguments, executor: executor, input: nil).execute().stdout
         }
         catch {
             return nil
@@ -32,11 +32,7 @@ public class Forrest {
         var oldOutput: String?
         for arguments in argumentsList {
             do {
-                var argumentsWithOldOutput = arguments
-                if let oldOutput = oldOutput {
-                    argumentsWithOldOutput += [oldOutput]
-                }
-                oldOutput = try Command(arguments: argumentsWithOldOutput, executor: executor).execute().stdout
+                oldOutput = try Command(arguments: arguments, executor: executor, input: oldOutput).execute().stdout
             }
             catch {
                 return nil

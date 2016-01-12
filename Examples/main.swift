@@ -10,6 +10,7 @@ import Foundation
 
 let forrest = Forrest()
 
+/*
 let out = forrest.run("ls", "-la")
 
 if let out = out {
@@ -17,9 +18,10 @@ if let out = out {
 }
 
 
-
-let out2 = forrest.run(["ls", "-la"], ["wc", "-w"])
+*/
+let out2 = forrest.run(["ls", "-la"], ["grep", "Test"])
 
 if let out2 = out2 {
     print(out2)
 }
+print("Done")
