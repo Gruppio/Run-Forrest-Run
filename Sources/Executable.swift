@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  Executable.swift
 //  Run-Forrest-Run
 //
 //  Created by Michele Gruppioni on 12/01/16.
@@ -8,5 +8,6 @@
 
 import Foundation
 
-print("Hello, World!")
-
+protocol Executable {
+    func execute() throws -> CommandResult
+}

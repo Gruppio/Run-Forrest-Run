@@ -7,7 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		90C423601C44752400F57B37 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4235F1C44752400F57B37 /* main.swift */; };
+		90C4237D1C44777800F57B37 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90C4237B1C44777800F57B37 /* Info.plist */; };
+		90C4237E1C44777800F57B37 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4237C1C44777800F57B37 /* Tests.swift */; };
+		90C423841C4477D500F57B37 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423831C4477D500F57B37 /* main.swift */; };
+		90C423861C44781800F57B37 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423851C44781800F57B37 /* Command.swift */; };
+		90C423871C44781800F57B37 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423851C44781800F57B37 /* Command.swift */; };
+		90C423891C44785500F57B37 /* Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423881C44785500F57B37 /* Executor.swift */; };
+		90C4238A1C44785500F57B37 /* Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423881C44785500F57B37 /* Executor.swift */; };
+		90C4238C1C44786300F57B37 /* TaskExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4238B1C44786300F57B37 /* TaskExecutor.swift */; };
+		90C4238D1C44786300F57B37 /* TaskExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4238B1C44786300F57B37 /* TaskExecutor.swift */; };
+		90C4238F1C44791B00F57B37 /* CommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4238E1C44791B00F57B37 /* CommandResult.swift */; };
+		90C423901C44791B00F57B37 /* CommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4238E1C44791B00F57B37 /* CommandResult.swift */; };
+		90C423921C44794700F57B37 /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423911C44794700F57B37 /* Executable.swift */; };
+		90C423931C44794700F57B37 /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423911C44794700F57B37 /* Executable.swift */; };
+		90C423951C4479E800F57B37 /* Forrest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423941C4479E800F57B37 /* Forrest.swift */; };
+		90C423961C4479E800F57B37 /* Forrest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423941C4479E800F57B37 /* Forrest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,11 +38,27 @@
 
 /* Begin PBXFileReference section */
 		90C4235C1C44752400F57B37 /* Run-Forrest-Run */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Run-Forrest-Run"; sourceTree = BUILT_PRODUCTS_DIR; };
-		90C4235F1C44752400F57B37 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		90C4236F1C4476A000F57B37 /* Run-Forrest-Run-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Run-Forrest-Run-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90C4237B1C44777800F57B37 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90C4237C1C44777800F57B37 /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		90C423831C4477D500F57B37 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		90C423851C44781800F57B37 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		90C423881C44785500F57B37 /* Executor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Executor.swift; sourceTree = "<group>"; };
+		90C4238B1C44786300F57B37 /* TaskExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskExecutor.swift; sourceTree = "<group>"; };
+		90C4238E1C44791B00F57B37 /* CommandResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandResult.swift; sourceTree = "<group>"; };
+		90C423911C44794700F57B37 /* Executable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
+		90C423941C4479E800F57B37 /* Forrest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forrest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		90C423591C44752400F57B37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90C4236C1C4476A000F57B37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,7 +71,9 @@
 		90C423531C44752400F57B37 = {
 			isa = PBXGroup;
 			children = (
-				90C4235E1C44752400F57B37 /* Run-Forrest-Run */,
+				90C423821C4477D500F57B37 /* Examples */,
+				90C4237A1C44777800F57B37 /* Run-Forrest-Run-Tests */,
+				90C423661C4475AD00F57B37 /* Sources */,
 				90C4235D1C44752400F57B37 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,16 +82,39 @@
 			isa = PBXGroup;
 			children = (
 				90C4235C1C44752400F57B37 /* Run-Forrest-Run */,
+				90C4236F1C4476A000F57B37 /* Run-Forrest-Run-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		90C4235E1C44752400F57B37 /* Run-Forrest-Run */ = {
+		90C423661C4475AD00F57B37 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				90C4235F1C44752400F57B37 /* main.swift */,
+				90C423851C44781800F57B37 /* Command.swift */,
+				90C423881C44785500F57B37 /* Executor.swift */,
+				90C4238B1C44786300F57B37 /* TaskExecutor.swift */,
+				90C4238E1C44791B00F57B37 /* CommandResult.swift */,
+				90C423911C44794700F57B37 /* Executable.swift */,
+				90C423941C4479E800F57B37 /* Forrest.swift */,
 			);
-			path = "Run-Forrest-Run";
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		90C4237A1C44777800F57B37 /* Run-Forrest-Run-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				90C4237B1C44777800F57B37 /* Info.plist */,
+				90C4237C1C44777800F57B37 /* Tests.swift */,
+			);
+			path = "Run-Forrest-Run-Tests";
+			sourceTree = "<group>";
+		};
+		90C423821C4477D500F57B37 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				90C423831C4477D500F57B37 /* main.swift */,
+			);
+			path = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +137,23 @@
 			productReference = 90C4235C1C44752400F57B37 /* Run-Forrest-Run */;
 			productType = "com.apple.product-type.tool";
 		};
+		90C4236E1C4476A000F57B37 /* Run-Forrest-Run-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90C423741C4476A000F57B37 /* Build configuration list for PBXNativeTarget "Run-Forrest-Run-Tests" */;
+			buildPhases = (
+				90C4236B1C4476A000F57B37 /* Sources */,
+				90C4236C1C4476A000F57B37 /* Frameworks */,
+				90C4236D1C4476A000F57B37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Run-Forrest-Run-Tests";
+			productName = "Run-Forrest-Run-Tests";
+			productReference = 90C4236F1C4476A000F57B37 /* Run-Forrest-Run-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +165,9 @@
 				ORGANIZATIONNAME = "Michele Gruppioni";
 				TargetAttributes = {
 					90C4235B1C44752400F57B37 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					90C4236E1C4476A000F57B37 = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
@@ -110,16 +185,48 @@
 			projectRoot = "";
 			targets = (
 				90C4235B1C44752400F57B37 /* Run-Forrest-Run */,
+				90C4236E1C4476A000F57B37 /* Run-Forrest-Run-Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90C4236D1C4476A000F57B37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90C4237D1C44777800F57B37 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		90C423581C44752400F57B37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90C423601C44752400F57B37 /* main.swift in Sources */,
+				90C423951C4479E800F57B37 /* Forrest.swift in Sources */,
+				90C423841C4477D500F57B37 /* main.swift in Sources */,
+				90C423891C44785500F57B37 /* Executor.swift in Sources */,
+				90C4238F1C44791B00F57B37 /* CommandResult.swift in Sources */,
+				90C423861C44781800F57B37 /* Command.swift in Sources */,
+				90C4238C1C44786300F57B37 /* TaskExecutor.swift in Sources */,
+				90C423921C44794700F57B37 /* Executable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90C4236B1C4476A000F57B37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90C423961C4479E800F57B37 /* Forrest.swift in Sources */,
+				90C4237E1C44777800F57B37 /* Tests.swift in Sources */,
+				90C4238A1C44785500F57B37 /* Executor.swift in Sources */,
+				90C423901C44791B00F57B37 /* CommandResult.swift in Sources */,
+				90C423871C44781800F57B37 /* Command.swift in Sources */,
+				90C4238D1C44786300F57B37 /* TaskExecutor.swift in Sources */,
+				90C423931C44794700F57B37 /* Executable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +327,28 @@
 			};
 			name = Release;
 		};
+		90C423751C4476A000F57B37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Run-Forrest-Run-Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Michele-Gruppioni.Run-Forrest-Run-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		90C423761C4476A000F57B37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Run-Forrest-Run-Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Michele-Gruppioni.Run-Forrest-Run-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -237,6 +366,15 @@
 			buildConfigurations = (
 				90C423641C44752400F57B37 /* Debug */,
 				90C423651C44752400F57B37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90C423741C4476A000F57B37 /* Build configuration list for PBXNativeTarget "Run-Forrest-Run-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90C423751C4476A000F57B37 /* Debug */,
+				90C423761C4476A000F57B37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
