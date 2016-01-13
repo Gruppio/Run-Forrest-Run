@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Command {
+public struct Command {
     var executor:   Executor
     var arguments:  [String]
     var input:      String?

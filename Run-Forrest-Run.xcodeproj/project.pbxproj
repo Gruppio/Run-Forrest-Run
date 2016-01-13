@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90A9F9B31C45A85E00D32E4A /* Forrest-Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A9F9B21C45A85E00D32E4A /* Forrest-Tests.swift */; };
 		90C4237D1C44777800F57B37 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90C4237B1C44777800F57B37 /* Info.plist */; };
 		90C4237E1C44777800F57B37 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4237C1C44777800F57B37 /* Tests.swift */; };
 		90C423841C4477D500F57B37 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423831C4477D500F57B37 /* main.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		90A9F9B21C45A85E00D32E4A /* Forrest-Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Forrest-Tests.swift"; sourceTree = "<group>"; };
 		90C4235C1C44752400F57B37 /* Run-Forrest-Run */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Run-Forrest-Run"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C4236F1C4476A000F57B37 /* Run-Forrest-Run-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Run-Forrest-Run-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C4237B1C44777800F57B37 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				90C4237B1C44777800F57B37 /* Info.plist */,
 				90C4237C1C44777800F57B37 /* Tests.swift */,
+				90A9F9B21C45A85E00D32E4A /* Forrest-Tests.swift */,
 			);
 			path = "Run-Forrest-Run-Tests";
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				90C423961C4479E800F57B37 /* Forrest.swift in Sources */,
 				90C4237E1C44777800F57B37 /* Tests.swift in Sources */,
 				90C4238A1C44785500F57B37 /* Executor.swift in Sources */,
+				90A9F9B31C45A85E00D32E4A /* Forrest-Tests.swift in Sources */,
 				90C423901C44791B00F57B37 /* CommandResult.swift in Sources */,
 				90C423871C44781800F57B37 /* Command.swift in Sources */,
 				90C4238D1C44786300F57B37 /* TaskExecutor.swift in Sources */,
@@ -377,6 +381,7 @@
 				90C423761C4476A000F57B37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
