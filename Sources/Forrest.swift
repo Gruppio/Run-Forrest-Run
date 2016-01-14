@@ -19,19 +19,16 @@ public class Forrest {
         self.init(executor: TaskExecutor())
     }
     
-    public func parseAndRun(command: String) -> String? {
+    public func run(command: String) -> String? {
         return executeArguments(splitToArgumentsList(command))
     }
     
-    public func run(arguments: String...) -> String? {
-        let argumentsParsed = arguments.reduce([]) { (result, args) -> [String] in
-            return result + forrest.splitCommandToArguments(args) }
-            .filter(){ !$0.isEmpty }
-        return executeArguments([argumentsParsed])
+    public func run(arguments arguments: String...) -> String? {
+        return executeArguments([arguments])
     }
     
-    public func run(argumentsList: [String]...) -> String? {
-        return executeArguments(argumentsList)
+    public func run(arguments arguments: [String]...) -> String? {
+        return executeArguments(arguments)
     }
     
     private func executeArguments(argumentsList: [[String]]) -> String? {
@@ -45,17 +42,22 @@ public class Forrest {
         }
     }
     
-    /*
+    
     func splitToArgumentsList(command: String) -> [[String]] {
         return command.componentsSeparatedByString("|")
                 .map() { $0.componentsSeparatedByString(" ").filter() { !$0.isEmpty } }
                 .filter() { !$0.isEmpty }
     }
-    */
+    /*
+    
+    let argumentsParsed = arguments.reduce([]) { (result, args) -> [String] in
+    return result + forrest.splitCommandToArguments(args) }
+    .filter(){ !$0.isEmpty }
+
     
     func splitCommandToArguments(command: String) -> [String] {
         return command.componentsSeparatedByString(" ").filter() { !$0.isEmpty }
-    }
+    }*/
     
     /*
     func splitCommandsToArgumentsList(commands: [String]) -> [[String]] {

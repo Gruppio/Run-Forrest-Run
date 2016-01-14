@@ -26,18 +26,15 @@ if let out2 = out2 {
     print(out2)
 }*/
 
-let o = ["ciao come", "stai"].reduce([[]]) { (result, args) -> [[String]] in
-    return result + forrest.splitToArgumentsList(args)
-    }.filter(){!$0.isEmpty}
 
-print(o)
+let pwd = forrest.run("pwd")
+let out = forrest.run("cd /Users/Gruppio/Desktop | mkdir folder | ls -la")
+//let out = forrest.run(arguments: ["ls", "-la"])
+//forrest.run("rmdir folder")
+//let out2 = forrest.run(arguments: ["ls", "-la"])
 
-
-//let out3 = forrest.run("echo", "ciao", "come stai | grep ciao")
-let out3 = forrest.run("")
-
-if let out3 = out3 {
-    print(out3)
+if let out = out, pwd = pwd {
+    print(pwd)
 }
 
 print("Done")
