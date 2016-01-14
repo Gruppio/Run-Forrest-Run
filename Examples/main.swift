@@ -32,7 +32,9 @@ let o = ["ciao come", "stai"].reduce([[]]) { (result, args) -> [[String]] in
 
 print(o)
 
-let out3 = forrest.run("echo", "ciao", "come stai | grep ciao")
+
+//let out3 = forrest.run("echo", "ciao", "come stai | grep ciao")
+let out3 = forrest.run("")
 
 if let out3 = out3 {
     print(out3)

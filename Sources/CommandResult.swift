@@ -9,10 +9,9 @@
 import Foundation
 
 struct CommandResult {
-    let exitStatus: Int?
-    let stdout:     String?
-    let stderr:     String?
-    var successExitStatus: Int = 0
+    let exitStatus:         Int?
+    let stdout:             String?
+    let stderr:             String?
     
     init(exitStatus: Int?, stdout: String?, stderr: String?) {
         self.exitStatus = exitStatus
