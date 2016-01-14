@@ -8,81 +8,69 @@
 
 import XCTest
 
+
 class Forrest_Tests: XCTestCase {
     
     let forrest = Forrest()
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testSplitToArgumentsListWith1Command() {
-        XCTAssertEqual(forrest.splitToArgumentsList("a"), [["a"]])
+    func testSplitArgumentsWith1Command() {
+        XCTAssertEqual(forrest.splitArguments("a"), [["a"]])
     }
 
-    func testSplitToArgumentsListWith2Commands() {
-        XCTAssertEqual(forrest.splitToArgumentsList("a|b"), [["a"], ["b"]])
+    func testSplitArgumentsWith2Commands() {
+        XCTAssertEqual(forrest.splitArguments("a|b"), [["a"], ["b"]])
     }
     
-    func testSplitToArgumentsListWith3Commands() {
-        XCTAssertEqual(forrest.splitToArgumentsList("a|b|c"), [["a"], ["b"], ["c"]])
+    func testSplitArgumentsWith3Commands() {
+        XCTAssertEqual(forrest.splitArguments("a|b|c"), [["a"], ["b"], ["c"]])
     }
     
-    func testSplitToArgumentsListWith1CommandWithFlag() {
-        XCTAssertEqual(forrest.splitToArgumentsList("a -b"), [["a", "-b"]])
+    func testSplitArgumentsWith1CommandWithFlag() {
+        XCTAssertEqual(forrest.splitArguments("a -b"), [["a", "-b"]])
     }
     
-    func testSplitToArgumentsListWith2CommandsWithFlag() {
-        XCTAssertEqual(forrest.splitToArgumentsList("a -b|c -d"), [["a", "-b"], ["c", "-d"]])
+    func testSplitArgumentsWith2CommandsWithFlag() {
+        XCTAssertEqual(forrest.splitArguments("a -b|c -d"), [["a", "-b"], ["c", "-d"]])
     }
     
-    func testSplitToArgumentsListWith3CommandsWithFlag() {
-        XCTAssertEqual(forrest.splitToArgumentsList("a -b|c -d|e -f"), [["a", "-b"],["c", "-d"],["e", "-f"]])
+    func testSplitArgumentsWith3CommandsWithFlag() {
+        XCTAssertEqual(forrest.splitArguments("a -b|c -d|e -f"), [["a", "-b"],["c", "-d"],["e", "-f"]])
     }
     
-    func testSplitToArgumentsListWith1CommandWithFlags() {
-        XCTAssertEqual(forrest.splitToArgumentsList("a -b --bb"), [["a", "-b", "--bb"]])
+    func testSplitArgumentsWith1CommandWithFlags() {
+        XCTAssertEqual(forrest.splitArguments("a -b --bb"), [["a", "-b", "--bb"]])
     }
     
-    func testSplitToArgumentsListWith2CommandsWithFlags() {
-        XCTAssertEqual(forrest.splitToArgumentsList("a -b --bb|c -d --dd"), [["a", "-b", "--bb"], ["c", "-d", "--dd"]])
+    func testSplitArgumentsWith2CommandsWithFlags() {
+        XCTAssertEqual(forrest.splitArguments("a -b --bb|c -d --dd"), [["a", "-b", "--bb"], ["c", "-d", "--dd"]])
     }
     
-    func testSplitToArgumentsListWith3CommandsWithFlags() {
-        XCTAssertEqual(forrest.splitToArgumentsList("a -b --bb|c -d --dd|e -f --ff"), [["a", "-b", "--bb"],["c", "-d", "--dd"],["e", "-f", "--ff"]])
+    func testSplitArgumentsWith3CommandsWithFlags() {
+        XCTAssertEqual(forrest.splitArguments("a -b --bb|c -d --dd|e -f --ff"), [["a", "-b", "--bb"],["c", "-d", "--dd"],["e", "-f", "--ff"]])
     }
     
-    func testSplitToArgumentsListWith1CommandAndSpaces() {
-        XCTAssertEqual(forrest.splitToArgumentsList("  a "), [["a"]])
+    func testSplitArgumentsWith1CommandAndSpaces() {
+        XCTAssertEqual(forrest.splitArguments("  a "), [["a"]])
     }
     
-    func testSplitToArgumentsListWith2CommandsAndSpaces() {
-        XCTAssertEqual(forrest.splitToArgumentsList(" a  | b "), [["a"], ["b"]])
+    func testSplitArgumentsWith2CommandsAndSpaces() {
+        XCTAssertEqual(forrest.splitArguments(" a  | b "), [["a"], ["b"]])
     }
     
-    func testSplitToArgumentsListWith3CommandsAndSpaces() {
-        XCTAssertEqual(forrest.splitToArgumentsList(" a | b  | c  "), [["a"], ["b"], ["c"]])
+    func testSplitArgumentsWith3CommandsAndSpaces() {
+        XCTAssertEqual(forrest.splitArguments(" a | b  | c  "), [["a"], ["b"], ["c"]])
     }
     
-    func testSplitToArgumentsListWith1CommandWithFlagAndSpaces() {
-        XCTAssertEqual(forrest.splitToArgumentsList(" a  -b "), [["a", "-b"]])
+    func testSplitArgumentsWith1CommandWithFlagAndSpaces() {
+        XCTAssertEqual(forrest.splitArguments(" a  -b "), [["a", "-b"]])
     }
     
-    func testSplitToArgumentsListWith2CommandsWithFlagAndSpaces() {
-        XCTAssertEqual(forrest.splitToArgumentsList(" a -b     | c  -d "), [["a", "-b"], ["c", "-d"]])
+    func testSplitArgumentsWith2CommandsWithFlagAndSpaces() {
+        XCTAssertEqual(forrest.splitArguments(" a -b     | c  -d "), [["a", "-b"], ["c", "-d"]])
     }
     
-    func testSplitToArgumentsListWith3CommandsWithFlagAndSpaces() {
-        XCTAssertEqual(forrest.splitToArgumentsList(" a -b   | c  -d | e -f "), [["a", "-b"],["c", "-d"],["e", "-f"]])
+    func testSplitArgumentsWith3CommandsWithFlagAndSpaces() {
+        XCTAssertEqual(forrest.splitArguments(" a -b   | c  -d | e -f "), [["a", "-b"],["c", "-d"],["e", "-f"]])
     }
-    
-    func testSplitToArgumentsListWithBackSlashSpace() {
-        XCTAssertEqual(forrest.splitToArgumentsList("  hello world "), [["hello world"]])
-    }
+
 }

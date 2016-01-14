@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Executable {
+public protocol Executable {
     func execute() throws -> CommandResult
 }

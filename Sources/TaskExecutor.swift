@@ -15,7 +15,8 @@ enum TaskExecutorError : ErrorType {
 }
 
 
-class TaskExecutor {
+/// This class has the responsability to execute a Command
+public class TaskExecutor {
     var launchPath: String
     
     init(launchPath: String) {
@@ -28,8 +29,10 @@ class TaskExecutor {
 }
 
 
+// MARK: - TaskExecutor + Executor
+
 extension TaskExecutor : Executor {
-    func execute(command: Command) throws -> CommandResult {
+    public func execute(command: Command) throws -> CommandResult {
         
         guard !launchPath.isEmpty else {
             throw TaskExecutorError.InvalidLaunchPath(launchPath: launchPath)
@@ -50,7 +53,7 @@ extension TaskExecutor : Executor {
         task.standardOutput = stdoutPipe
         task.standardError  = stderrPipe
         
-        if let input = command.input {
+        if let input = command.stdin {
             stdinPipe.write(input)
         }
         
@@ -65,6 +68,8 @@ extension TaskExecutor : Executor {
     }
     
 }
+
+// MARK: - NSPipe Extension
 
 extension NSPipe {
     func read() -> String? {

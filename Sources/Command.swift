@@ -8,31 +8,35 @@
 
 import Foundation
 
-
+/**
+ *  This struct contain all the inputs needed for execute a command
+ */
 public struct Command {
-    var executor:           Executor
-    var arguments:          [String]
-    var input:              String?
-    var successExitStatus:  Int = 0
     
-    init(arguments: [String], executor: Executor, input: String?) {
+    /// The Arguments of the command, including the name of the command
+    var arguments:  [String]
+    var executor:   Executor
+    var stdin:      String?
+    
+    init(arguments: [String], executor: Executor, stdin: String?) {
         self.arguments  = arguments
         self.executor   = executor
-        self.input      = input
+        self.stdin      = stdin
     }
     
-    init(_ arguments: String..., executor: Executor, input: String?) {
-        self.init(arguments: arguments, executor: executor, input: input)
+    init(_ arguments: String..., executor: Executor, stdin: String?) {
+        self.init(arguments: arguments, executor: executor, stdin: stdin)
     }
     
     init(_ arguments: String..., executor: Executor) {
-        self.init(arguments: arguments, executor: executor, input: nil)
+        self.init(arguments: arguments, executor: executor, stdin: nil)
     }
 }
 
+// MARK: - Command + Executable
 
 extension Command : Executable {
-    func execute() throws -> CommandResult {
+    public func execute() throws -> CommandResult {
         return try executor.execute(self)
     }
 }

@@ -8,21 +8,39 @@
 
 import Foundation
 
+/// My Momma always said: Forrest Run shell commands in Swift
 public class Forrest {
-    var executor: Executor
+        
+    var splitArguments = { (command: String) -> [[String]] in
+        return command.componentsSeparatedByString("|")
+            .map() { $0.componentsSeparatedByString(" ").filter() { !$0.isEmpty } }
+            .filter() { !$0.isEmpty }
+    }
+    
+    public var executor: Executor
     
     init(executor: Executor) {
         self.executor = executor
     }
     
+    /**
+     init a Forrest object with a TaskExecutor executor
+     */
     convenience init() {
         self.init(executor: TaskExecutor())
     }
     
+
+    /**
+    Run a Shell command using the specified executor
+    - parameter command: A Shell Command or even multiple piped shell commands ( ex: "ls -la | grep swift" )
+    - returns: The Command Result
+    */
     public func run(command: String) -> String? {
-        return executeArguments(splitToArgumentsList(command))
+        return executeArguments(splitArguments(command))
     }
     
+    /// aaaa
     public func run(arguments arguments: String...) -> String? {
         return executeArguments([arguments])
     }
@@ -33,39 +51,14 @@ public class Forrest {
     
     private func executeArguments(argumentsList: [[String]]) -> String? {
         do {
-            return try argumentsList.reduce(nil) { (input, arguments) -> String? in
-                return try Command(arguments: arguments, executor: executor, input: input).execute().stdout
+            return try argumentsList.reduce(nil) { (prevCommandResult, arguments) -> String? in
+                return try Command(arguments: arguments, executor: executor, stdin: prevCommandResult).execute().stdout
                 }
         }
         catch {
             return nil
         }
     }
-    
-    
-    func splitToArgumentsList(command: String) -> [[String]] {
-        return command.componentsSeparatedByString("|")
-                .map() { $0.componentsSeparatedByString(" ").filter() { !$0.isEmpty } }
-                .filter() { !$0.isEmpty }
-    }
-    /*
-    
-    let argumentsParsed = arguments.reduce([]) { (result, args) -> [String] in
-    return result + forrest.splitCommandToArguments(args) }
-    .filter(){ !$0.isEmpty }
-
-    
-    func splitCommandToArguments(command: String) -> [String] {
-        return command.componentsSeparatedByString(" ").filter() { !$0.isEmpty }
-    }*/
-    
-    /*
-    func splitCommandsToArgumentsList(commands: [String]) -> [[String]] {
-        commands.reduce([[]]) { (argList, command) -> [[String]] in
-            return command.componentsSeparatedByString("|").reduce(<#T##initial: T##T#>, combine: <#T##(T, String) throws -> T#>)
-        }
-    }*/
-
 }
 
 

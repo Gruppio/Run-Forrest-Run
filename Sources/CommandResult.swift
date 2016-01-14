@@ -8,10 +8,13 @@
 
 import Foundation
 
-struct CommandResult {
-    let exitStatus:         Int?
-    let stdout:             String?
-    let stderr:             String?
+/**
+ *  Encapsulate the Command execution Result
+ */
+public struct CommandResult {
+    public let exitStatus:  Int?
+    public let stdout:      String?
+    public let stderr:      String?
     
     init(exitStatus: Int?, stdout: String?, stderr: String?) {
         self.exitStatus = exitStatus

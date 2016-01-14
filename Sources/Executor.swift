@@ -8,6 +8,9 @@
 
 import Foundation
 
-protocol Executor {
+/**
+ *  This protocol define the method that an object must implement for execute a Command
+ */
+public protocol Executor {
     func execute(command: Command) throws -> CommandResult
 }
