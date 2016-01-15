@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9010D7871C4968EC00F577D9 /* CommandFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010D7861C4968EC00F577D9 /* CommandFactory.swift */; };
+		9010D7881C4968EC00F577D9 /* CommandFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010D7861C4968EC00F577D9 /* CommandFactory.swift */; };
 		90A9F9B31C45A85E00D32E4A /* Forrest-Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A9F9B21C45A85E00D32E4A /* Forrest-Tests.swift */; };
 		90C4237D1C44777800F57B37 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90C4237B1C44777800F57B37 /* Info.plist */; };
 		90C423841C4477D500F57B37 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423831C4477D500F57B37 /* main.swift */; };
@@ -39,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9010D7861C4968EC00F577D9 /* CommandFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandFactory.swift; sourceTree = "<group>"; };
 		90A9F9B21C45A85E00D32E4A /* Forrest-Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Forrest-Tests.swift"; sourceTree = "<group>"; };
 		90C4235C1C44752400F57B37 /* Run-Forrest-Run */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Run-Forrest-Run"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C4236F1C4476A000F57B37 /* Run-Forrest-Run-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Run-Forrest-Run-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +103,7 @@
 				90C423911C44794700F57B37 /* Executable.swift */,
 				90C423941C4479E800F57B37 /* Forrest.swift */,
 				90FF05991C487CEF00875C11 /* Argumented.swift */,
+				9010D7861C4968EC00F577D9 /* CommandFactory.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -210,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9010D7871C4968EC00F577D9 /* CommandFactory.swift in Sources */,
 				90C423951C4479E800F57B37 /* Forrest.swift in Sources */,
 				90C423841C4477D500F57B37 /* main.swift in Sources */,
 				90C423891C44785500F57B37 /* Executor.swift in Sources */,
@@ -225,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9010D7881C4968EC00F577D9 /* CommandFactory.swift in Sources */,
 				90C423961C4479E800F57B37 /* Forrest.swift in Sources */,
 				90C4238A1C44785500F57B37 /* Executor.swift in Sources */,
 				90A9F9B31C45A85E00D32E4A /* Forrest-Tests.swift in Sources */,

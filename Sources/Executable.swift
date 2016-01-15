@@ -12,3 +12,10 @@ public protocol Executable {
     var stdin: String? { get set }
     func execute() throws -> ExecutionResult
 }
+
+
+
+public protocol ExecutableFactory {
+    func create(arguments: [String], stdin: String?) -> Executable
+    func create(arguments: [String]) -> Executable
+}

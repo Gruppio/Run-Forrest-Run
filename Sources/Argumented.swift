@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Argumented {
+public protocol Argumented {
     var arguments: [String] { get set }
 }

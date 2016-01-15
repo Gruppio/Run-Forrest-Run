@@ -8,31 +8,14 @@
 
 import Foundation
 
-/// My Momma always said: Forrest Run shell commands in Swift
+/// My Momma always said: Forrest Run Shell Commands in Swift
 public class Forrest {
+    public var executableFactory: ExecutableFactory
     
-    // TODO: Move this in to a class
-    let splitArguments = { (command: String) -> [[String]] in
-        return command.componentsSeparatedByString("|")
-            .map() { $0.componentsSeparatedByString(" ").filter() { !$0.isEmpty } }
-            .filter() { !$0.isEmpty }
+    init(executableFactory: ExecutableFactory) {
+        self.executableFactory = executableFactory
     }
     
-    // Move in to a factory
-    public var executor: Executor
-    
-    init(executor: Executor) {
-        self.executor = executor
-    }
-    
-    /**
-     init a Forrest object with a TaskExecutor executor
-     */
-    convenience init() {
-        self.init(executor: TaskExecutor())
-    }
-    
-
     /**
     Run a Shell command using the specified executor
     - parameter command: A Shell Command or even multiple piped shell commands ( ex: "ls -la | grep swift" )
@@ -42,7 +25,6 @@ public class Forrest {
         return executeArguments(splitArguments(command))
     }
     
-    /// aaaa
     public func run(arguments arguments: String...) -> ExecutionResult {
         return executeArguments([arguments])
     }
@@ -51,21 +33,18 @@ public class Forrest {
         return executeArguments(arguments)
     }
     
-    public func run(command command: Command) -> ExecutionResult {
-        return executeExecutables([command])
+    public func run(executable executable: Executable) -> ExecutionResult {
+        return executeExecutables([executable])
     }
     
-    // TODO Make it work
-    /*
-    public func run(commands commands: Command...) -> ExecutionResult {
-        return executeExecutables(commands)
-    }*/
+    public func run(executable executable: Executable...) -> ExecutionResult {
+        return executeExecutables(executable)
+    }
     
-    // TODO replace with a factory
+    
+    
     private func executeArguments(argumentsList: [[String]]) -> ExecutionResult {
-        return executeExecutables(argumentsList.map() { (arguments) -> Command in
-            return Command(arguments: arguments, executor: executor, stdin: nil)
-        })
+        return executeExecutables(argumentsList.map(executableFactory.create))
     }
     
     private func executeExecutables(executables: [Executable]) -> ExecutionResult {
@@ -86,6 +65,19 @@ public class Forrest {
         }
     }
     
+    // TODO: Move this in to a class
+    let splitArguments = { (command: String) -> [[String]] in
+        return command.componentsSeparatedByString("|")
+            .map() { $0.componentsSeparatedByString(" ").filter() { !$0.isEmpty } }
+            .filter() { !$0.isEmpty }
+    }
+    
+}
+
+extension Forrest {
+    public convenience init() {
+        self.init(executableFactory: CommandFactory())
+    }
 }
 
 
