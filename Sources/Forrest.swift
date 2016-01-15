@@ -10,7 +10,8 @@ import Foundation
 
 /// My Momma always said: Forrest Run shell commands in Swift
 public class Forrest {
-        
+    
+    // TODO: Move this in to a class
     let splitArguments = { (command: String) -> [[String]] in
         return command.componentsSeparatedByString("|")
             .map() { $0.componentsSeparatedByString(" ").filter() { !$0.isEmpty } }
@@ -53,6 +54,8 @@ public class Forrest {
     public func run(command command: Command) -> ExecutionResult {
         return executeExecutables([command])
     }
+    
+    // TODO Make it work
     /*
     public func run(commands commands: Command...) -> ExecutionResult {
         return executeExecutables(commands)
@@ -68,7 +71,7 @@ public class Forrest {
     private func executeExecutables(executables: [Executable]) -> ExecutionResult {
         do {
             return try executables.reduce(ExecutionResult(stdout: executables.first?.stdin)) { (prevExecutionResult, var executable) -> ExecutionResult in
-                executable.stdin = prevExecutionResult.stdout
+                executable.stdin = prevExecutionResult.stdout // Pipe
                 return try executable.execute()
             }
         }

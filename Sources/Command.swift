@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- *  This struct contain all the inputs needed for execute a command
+ *  This struct contain all the informations needed for execute a command
  */
 public struct Command : Executable, Argumented {
     /// The Arguments of the command, including the name of the command
