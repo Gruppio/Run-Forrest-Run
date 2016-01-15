@@ -13,7 +13,7 @@ let forrest = Forrest()
 let pwd = forrest.run("pwd")
 let out = forrest.run("ls -la | grep swift")
 
-if let out = out, pwd = pwd {
+if let out = out.stdout, pwd = pwd.stdout {
     print(out)
 }
 
