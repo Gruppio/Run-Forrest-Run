@@ -16,12 +16,14 @@
 		90C4238A1C44785500F57B37 /* Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423881C44785500F57B37 /* Executor.swift */; };
 		90C4238C1C44786300F57B37 /* TaskExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4238B1C44786300F57B37 /* TaskExecutor.swift */; };
 		90C4238D1C44786300F57B37 /* TaskExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4238B1C44786300F57B37 /* TaskExecutor.swift */; };
-		90C4238F1C44791B00F57B37 /* CommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4238E1C44791B00F57B37 /* CommandResult.swift */; };
-		90C423901C44791B00F57B37 /* CommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4238E1C44791B00F57B37 /* CommandResult.swift */; };
+		90C4238F1C44791B00F57B37 /* ExecutionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4238E1C44791B00F57B37 /* ExecutionResult.swift */; };
+		90C423901C44791B00F57B37 /* ExecutionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4238E1C44791B00F57B37 /* ExecutionResult.swift */; };
 		90C423921C44794700F57B37 /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423911C44794700F57B37 /* Executable.swift */; };
 		90C423931C44794700F57B37 /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423911C44794700F57B37 /* Executable.swift */; };
 		90C423951C4479E800F57B37 /* Forrest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423941C4479E800F57B37 /* Forrest.swift */; };
 		90C423961C4479E800F57B37 /* Forrest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423941C4479E800F57B37 /* Forrest.swift */; };
+		90FF059A1C487CF000875C11 /* Argumented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF05991C487CEF00875C11 /* Argumented.swift */; };
+		90FF059B1C487CF000875C11 /* Argumented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF05991C487CEF00875C11 /* Argumented.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,12 +44,13 @@
 		90C4236F1C4476A000F57B37 /* Run-Forrest-Run-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Run-Forrest-Run-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C4237B1C44777800F57B37 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90C423831C4477D500F57B37 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		90C423851C44781800F57B37 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
-		90C423881C44785500F57B37 /* Executor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Executor.swift; sourceTree = "<group>"; };
-		90C4238B1C44786300F57B37 /* TaskExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskExecutor.swift; sourceTree = "<group>"; };
-		90C4238E1C44791B00F57B37 /* CommandResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandResult.swift; sourceTree = "<group>"; };
-		90C423911C44794700F57B37 /* Executable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
-		90C423941C4479E800F57B37 /* Forrest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forrest.swift; sourceTree = "<group>"; };
+		90C423851C44781800F57B37 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Command.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		90C423881C44785500F57B37 /* Executor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Executor.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		90C4238B1C44786300F57B37 /* TaskExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskExecutor.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		90C4238E1C44791B00F57B37 /* ExecutionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionResult.swift; sourceTree = "<group>"; };
+		90C423911C44794700F57B37 /* Executable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Executable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		90C423941C4479E800F57B37 /* Forrest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Forrest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		90FF05991C487CEF00875C11 /* Argumented.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Argumented.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +96,10 @@
 				90C423851C44781800F57B37 /* Command.swift */,
 				90C423881C44785500F57B37 /* Executor.swift */,
 				90C4238B1C44786300F57B37 /* TaskExecutor.swift */,
-				90C4238E1C44791B00F57B37 /* CommandResult.swift */,
+				90C4238E1C44791B00F57B37 /* ExecutionResult.swift */,
 				90C423911C44794700F57B37 /* Executable.swift */,
 				90C423941C4479E800F57B37 /* Forrest.swift */,
+				90FF05991C487CEF00875C11 /* Argumented.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -209,10 +213,11 @@
 				90C423951C4479E800F57B37 /* Forrest.swift in Sources */,
 				90C423841C4477D500F57B37 /* main.swift in Sources */,
 				90C423891C44785500F57B37 /* Executor.swift in Sources */,
-				90C4238F1C44791B00F57B37 /* CommandResult.swift in Sources */,
+				90C4238F1C44791B00F57B37 /* ExecutionResult.swift in Sources */,
 				90C423861C44781800F57B37 /* Command.swift in Sources */,
 				90C4238C1C44786300F57B37 /* TaskExecutor.swift in Sources */,
 				90C423921C44794700F57B37 /* Executable.swift in Sources */,
+				90FF059A1C487CF000875C11 /* Argumented.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,10 +228,11 @@
 				90C423961C4479E800F57B37 /* Forrest.swift in Sources */,
 				90C4238A1C44785500F57B37 /* Executor.swift in Sources */,
 				90A9F9B31C45A85E00D32E4A /* Forrest-Tests.swift in Sources */,
-				90C423901C44791B00F57B37 /* CommandResult.swift in Sources */,
+				90C423901C44791B00F57B37 /* ExecutionResult.swift in Sources */,
 				90C423871C44781800F57B37 /* Command.swift in Sources */,
 				90C4238D1C44786300F57B37 /* TaskExecutor.swift in Sources */,
 				90C423931C44794700F57B37 /* Executable.swift in Sources */,
+				90FF059B1C487CF000875C11 /* Argumented.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

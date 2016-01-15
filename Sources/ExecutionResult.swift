@@ -1,5 +1,5 @@
 //
-//  CommandResult.swift
+//  ExecutionResult.swift
 //  Run-Forrest-Run
 //
 //  Created by Michele Gruppioni on 12/01/16.
@@ -9,9 +9,9 @@
 import Foundation
 
 /**
- *  Encapsulate the Command execution Result
+ *  Encapsulate the Command Execution Result
  */
-public struct CommandResult {
+public struct ExecutionResult {
     public let exitStatus:  Int?
     public let stdout:      String?
     public let stderr:      String?

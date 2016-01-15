@@ -12,5 +12,5 @@ import Foundation
  *  This protocol define the method that an object must implement for execute a Command
  */
 public protocol Executor {
-    func execute(command: Command) throws -> CommandResult
+    func execute(executable: Executable) throws -> ExecutionResult
 }

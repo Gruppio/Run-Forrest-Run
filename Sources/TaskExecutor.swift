@@ -11,7 +11,7 @@ import Foundation
 
 enum TaskExecutorError : ErrorType {
     case InvalidLaunchPath(launchPath: String)
-    case InvalidCommandArguments(command: Command)
+    case InvalidArguments(arguments: [String]?)
 }
 
 
@@ -32,14 +32,19 @@ public class TaskExecutor {
 // MARK: - TaskExecutor + Executor
 
 extension TaskExecutor : Executor {
-    public func execute(command: Command) throws -> CommandResult {
+    
+    public func execute(executable: Executable) throws -> ExecutionResult {
+        
+        guard let arguments = (executable as? Argumented)?.arguments else {
+            throw TaskExecutorError.InvalidArguments(arguments: nil)
+        }
         
         guard !launchPath.isEmpty else {
             throw TaskExecutorError.InvalidLaunchPath(launchPath: launchPath)
         }
         
-        guard !command.arguments.isEmpty else {
-            throw TaskExecutorError.InvalidCommandArguments(command: command)
+        guard !arguments.isEmpty else {
+            throw TaskExecutorError.InvalidArguments(arguments: arguments)
         }
         
         let task            = NSTask()
@@ -48,12 +53,12 @@ extension TaskExecutor : Executor {
         let stderrPipe      = NSPipe()
         
         task.launchPath     = launchPath
-        task.arguments      = command.arguments
+        task.arguments      = arguments
         task.standardInput  = stdinPipe
         task.standardOutput = stdoutPipe
         task.standardError  = stderrPipe
         
-        if let input = command.stdin {
+        if let input = executable.stdin {
             stdinPipe.write(input)
         }
         
@@ -64,7 +69,7 @@ extension TaskExecutor : Executor {
         let stdout          = stdoutPipe.read()
         let stderr          = stderrPipe.read()
         
-        return CommandResult(exitStatus: exitStatus, stdout: stdout, stderr: stderr)
+        return ExecutionResult(exitStatus: exitStatus, stdout: stdout, stderr: stderr)
     }
     
 }

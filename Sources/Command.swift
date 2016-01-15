@@ -11,12 +11,12 @@ import Foundation
 /**
  *  This struct contain all the inputs needed for execute a command
  */
-public struct Command {
-    
+public struct Command : Executable, Argumented {
     /// The Arguments of the command, including the name of the command
-    var arguments:  [String]
-    var executor:   Executor
-    var stdin:      String?
+    public var arguments:  [String]
+    public var executor:   Executor
+    public var stdin:      String?
+    
     
     init(arguments: [String], executor: Executor, stdin: String?) {
         self.arguments  = arguments
@@ -31,14 +31,9 @@ public struct Command {
     init(_ arguments: String..., executor: Executor) {
         self.init(arguments: arguments, executor: executor, stdin: nil)
     }
-}
-
-// MARK: - Command + Executable
-
-extension Command : Executable {
-    public func execute() throws -> CommandResult {
+    
+    public func execute() throws -> ExecutionResult {
         return try executor.execute(self)
     }
+
 }
-
-

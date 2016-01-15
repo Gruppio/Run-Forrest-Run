@@ -36,61 +36,47 @@ public class Forrest {
     - parameter command: A Shell Command or even multiple piped shell commands ( ex: "ls -la | grep swift" )
     - returns: The Command Result
     */
-    public func run(command: String) -> CommandResult {
+    public func run(command: String) -> ExecutionResult {
         return executeArguments(splitArguments(command))
     }
     
     /// aaaa
-    public func run(arguments arguments: String...) -> CommandResult {
+    public func run(arguments arguments: String...) -> ExecutionResult {
         return executeArguments([arguments])
     }
     
-    public func run(arguments arguments: [String]...) -> CommandResult {
+    public func run(arguments arguments: [String]...) -> ExecutionResult {
         return executeArguments(arguments)
     }
     
-    public func run(command command: Command) -> CommandResult {
+    public func run(command command: Command) -> ExecutionResult {
         return executeCommands([command])
     }
     
-    public func run(commands commands: Command...) -> CommandResult {
+    public func run(commands commands: Command...) -> ExecutionResult {
         return executeCommands(commands)
     }
     
-    private func executeArguments(argumentsList: [[String]]) -> CommandResult {
-        /*do {
-            return try argumentsList.reduce(CommandResult(stdout: nil)) { (prevCommandResult, arguments) -> CommandResult in
-                return try Command(arguments: arguments, executor: executor, stdin: prevCommandResult.stdout).execute()
-                }
-        }
-        catch TaskExecutorError.InvalidCommandArguments(command: let command) {
-            return CommandResult(exitStatus: nil, stdout: nil, stderr: "Invalid Arguments in Command: \(command)")
-        }
-        catch TaskExecutorError.InvalidLaunchPath(launchPath: let launchPath) {
-            return CommandResult(exitStatus: nil, stdout: nil, stderr: "Invalid launchPath: \(launchPath)")
-        }
-        catch {
-            return CommandResult(exitStatus: nil, stdout: nil, stderr: "Unknown Exception")
-        }*/
+    private func executeArguments(argumentsList: [[String]]) -> ExecutionResult {
         return executeCommands(argumentsList.map() { (arguments) -> Command in
             return Command(arguments: arguments, executor: executor, stdin: nil)
         })
     }
     
-    private func executeCommands(commands: [Command]) -> CommandResult {
+    private func executeCommands(commands: [Command]) -> ExecutionResult {
         do {
-            return try commands.reduce(CommandResult(stdout: commands.first?.stdin)) { (prevCommandResult, command) -> CommandResult in
-                return try Command(arguments: command.arguments, executor: command.executor, stdin: prevCommandResult.stdout).execute()
+            return try commands.reduce(ExecutionResult(stdout: commands.first?.stdin)) { (prevExecutionResult, command) -> ExecutionResult in
+                return try Command(arguments: command.arguments, executor: command.executor, stdin: prevExecutionResult.stdout).execute()
             }
         }
-        catch TaskExecutorError.InvalidCommandArguments(command: let command) {
-            return CommandResult(exitStatus: nil, stdout: nil, stderr: "Invalid Arguments in Command: \(command)")
+        catch TaskExecutorError.InvalidArguments(arguments: let arguments) {
+            return ExecutionResult(exitStatus: nil, stdout: nil, stderr: "Invalid Arguments: \(arguments)")
         }
         catch TaskExecutorError.InvalidLaunchPath(launchPath: let launchPath) {
-            return CommandResult(exitStatus: nil, stdout: nil, stderr: "Invalid launchPath: \(launchPath)")
+            return ExecutionResult(exitStatus: nil, stdout: nil, stderr: "Invalid launchPath: \(launchPath)")
         }
         catch {
-            return CommandResult(exitStatus: nil, stdout: nil, stderr: "Unknown Exception")
+            return ExecutionResult(exitStatus: nil, stdout: nil, stderr: "Unknown Exception")
         }
     }
     

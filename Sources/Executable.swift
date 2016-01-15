@@ -9,5 +9,6 @@
 import Foundation
 
 public protocol Executable {
-    func execute() throws -> CommandResult
+    var stdin: String? { get set }
+    func execute() throws -> ExecutionResult
 }
