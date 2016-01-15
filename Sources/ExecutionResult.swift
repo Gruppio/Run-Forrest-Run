@@ -25,5 +25,13 @@ public struct ExecutionResult {
     init(stdout: String?) {
         self.init(exitStatus: nil, stdout: stdout, stderr: nil)
     }
+    
+    init(stderr: String?) {
+        self.init(exitStatus: nil, stdout: nil, stderr: stderr)
+    }
+    
+    init(exitStatus: Int?) {
+        self.init(exitStatus: exitStatus, stdout: nil, stderr: nil)
+    }
 }
 

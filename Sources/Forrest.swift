@@ -17,6 +17,7 @@ public class Forrest {
             .filter() { !$0.isEmpty }
     }
     
+    // Move in to a factory
     public var executor: Executor
     
     init(executor: Executor) {
@@ -50,33 +51,35 @@ public class Forrest {
     }
     
     public func run(command command: Command) -> ExecutionResult {
-        return executeCommands([command])
+        return executeExecutables([command])
     }
-    
+    /*
     public func run(commands commands: Command...) -> ExecutionResult {
-        return executeCommands(commands)
-    }
+        return executeExecutables(commands)
+    }*/
     
+    // TODO replace with a factory
     private func executeArguments(argumentsList: [[String]]) -> ExecutionResult {
-        return executeCommands(argumentsList.map() { (arguments) -> Command in
+        return executeExecutables(argumentsList.map() { (arguments) -> Command in
             return Command(arguments: arguments, executor: executor, stdin: nil)
         })
     }
     
-    private func executeCommands(commands: [Command]) -> ExecutionResult {
+    private func executeExecutables(executables: [Executable]) -> ExecutionResult {
         do {
-            return try commands.reduce(ExecutionResult(stdout: commands.first?.stdin)) { (prevExecutionResult, command) -> ExecutionResult in
-                return try Command(arguments: command.arguments, executor: command.executor, stdin: prevExecutionResult.stdout).execute()
+            return try executables.reduce(ExecutionResult(stdout: executables.first?.stdin)) { (prevExecutionResult, var executable) -> ExecutionResult in
+                executable.stdin = prevExecutionResult.stdout
+                return try executable.execute()
             }
         }
         catch TaskExecutorError.InvalidArguments(arguments: let arguments) {
-            return ExecutionResult(exitStatus: nil, stdout: nil, stderr: "Invalid Arguments: \(arguments)")
+            return ExecutionResult(stderr: "Forrest: TaskExecutor: Invalid Arguments: \(arguments)")
         }
         catch TaskExecutorError.InvalidLaunchPath(launchPath: let launchPath) {
-            return ExecutionResult(exitStatus: nil, stdout: nil, stderr: "Invalid launchPath: \(launchPath)")
+            return ExecutionResult(stderr: "Forrest: TaskExecutor: Invalid launchPath: \(launchPath)")
         }
         catch {
-            return ExecutionResult(exitStatus: nil, stdout: nil, stderr: "Unknown Exception")
+            return ExecutionResult(stderr: "Forrest: Unknown Exception")
         }
     }
     
