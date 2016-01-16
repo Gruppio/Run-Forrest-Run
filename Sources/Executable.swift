@@ -8,11 +8,11 @@
 
 import Foundation
 
+
 public protocol Executable {
     var stdin: String? { get set }
     func execute() throws -> ExecutionResult
 }
-
 
 
 public protocol ExecutableFactory {

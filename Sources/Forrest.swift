@@ -17,31 +17,56 @@ public class Forrest {
     }
     
     /**
-    Run a Shell command using the specified executor
-    - parameter command: A Shell Command or even multiple piped shell commands ( ex: "ls -la | grep swift" )
+     Run the specified shell command ( ex: run("ls -la | grep swift") )
+     The command will be splitted in an arguments list using the whitespace character, if you have to
+     specify names that contain whitespaces please use run(arguments: )
+     *Note* Use always absolute path or path relative to current folder because cd will no have effect
+    - parameter command: A Shell Command or multiple Piped Shell Commands ( ex: "ls -la | grep swift" )
     - returns: The Command Result
     */
     public func run(command: String) -> ExecutionResult {
         return executeArguments(splitArguments(command))
     }
     
+    /**
+     Run the shell command expressed in his arguments ( ex: run("ls", "-l") )
+     *Note* Use always absolute path or path relative to current folder because cd will no have effect
+     - parameter arguments: All the Shell Command Arguments including the command name ( ex: ["ls", "-la"] )
+     - returns: The Command Result
+     */
     public func run(arguments arguments: String...) -> ExecutionResult {
         return executeArguments([arguments])
     }
     
+    /**
+     Run multiple Piped shell command expressed in their arguments ( ex: run([["ls", "-l"], ["grep", "swift]]) )
+     *Note* Use always absolute path or path relative to current folder because cd will no have effect
+     - parameter arguments: Multiple Shell Command Arguments including the commands name ( ex: [["ls", "-la"], ["grep", "swift"]] )
+     - returns: The Command Result
+     */
     public func run(arguments arguments: [String]...) -> ExecutionResult {
         return executeArguments(arguments)
     }
     
-    public func run(executable executable: Executable) -> ExecutionResult {
+    /**
+     Run the Executable ( ex: run(Command(arguments: ["ls", "-l"], executor: TaskExecutor(), stdin: nil) )
+     *Note* Use always absolute path or path relative to current folder because cd will no have effect
+     - parameter executables: An Executable object
+     - returns: The Command Result
+    */
+    public func run(executables executable: Executable) -> ExecutionResult {
         return executeExecutables([executable])
     }
     
-    public func run(executable executable: Executable...) -> ExecutionResult {
+    /**
+     Run multiple Piped Executables ( ex: run([Command(arguments: ["ls", "-l"], executor: TaskExecutor(), stdin: nil), ... ] )
+     *Note* Use always absolute path or path relative to current folder because cd will no have effect
+     - parameter executables: An Executables objects list
+     - returns: The Command Result
+     */
+    public func run(executables executable: Executable...) -> ExecutionResult {
         return executeExecutables(executable)
     }
-    
-    
     
     private func executeArguments(argumentsList: [[String]]) -> ExecutionResult {
         return executeExecutables(argumentsList.map(executableFactory.create))

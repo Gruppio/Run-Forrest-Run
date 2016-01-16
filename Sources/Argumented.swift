@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ *  This protocol must be implemented by objects with a list of arguments 
+ */
 public protocol Argumented {
     var arguments: [String] { get set }
 }

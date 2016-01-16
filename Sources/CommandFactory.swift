@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ *  Creates Command Objects with the specified Executor
+ */
 public struct CommandFactory : ExecutableFactory {
     
     public var executor: Executor
@@ -27,6 +30,11 @@ public struct CommandFactory : ExecutableFactory {
 
 // MARK: - CommandFactory Extension
 extension CommandFactory {
+    
+    /**
+     Initialize the CommandFactory with a TaskExecutor Executor
+     - returns: The CommandFactory
+     */
     init() {
         self.init(executor: TaskExecutor())
     }
