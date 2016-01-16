@@ -1,13 +1,13 @@
 //
 //  main.swift
-//  Example
+//  ListSwiftFiles
 //
 //  Created by Michele Gruppioni on 16/01/16.
 //  Copyright © 2016 Michele Gruppioni. All rights reserved.
 //
 
 import Foundation
-import RunForrestRun
+import Forrest
 
 let forrest     = Forrest()
 let pwd         = forrest.run("pwd").stdout
