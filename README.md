@@ -11,7 +11,7 @@
 
 ## Example:
 ```Swift
-import Run-Forrest-Run
+import Forrest
 
 let forrest = Forrest()
 
@@ -23,13 +23,13 @@ let swiftFiles = forrest.run("ls -la | grep swift").stdout
 ```
 
 ## Included Examples:
-The First example is a program that it will list all the Swift files in your launch directory.
+The First example is a program that it will list the Swift files in your launch directory.
 For run this program:
 ```Shell
 git clone https://github.com/Gruppio/Run-Forrest-Run.git
-cd Run-Forrest-Run/Examples/Example
+cd Run-Forrest-Run/Examples/ListSwiftFiles
 swift build
-.build/debug/Example
+.build/debug/ListSwiftFiles
 ```
 
 ## How to Install:
