@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Run-Forrest-Run
+import RunForrestRun
 
 let forrest     = Forrest()
 let pwd         = forrest.run("pwd").stdout

@@ -12,6 +12,6 @@ let package = Package(
     name: "Example",
     dependencies: [
         //.Package(url: "https://github.com/Gruppio/Run-Forrest_Run.git", majorVersion: 1),
-        .Package(url: "../", majorVersion: 1)
+        .Package(url: "../../", majorVersion: 1)
     ]
 )
