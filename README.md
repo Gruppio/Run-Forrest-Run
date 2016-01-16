@@ -1,5 +1,7 @@
 ![alt Echolor](https://raw.github.com/Gruppio/Run-Forrest-Run/assets/RunForrestRun_(Stupid).png "Forrest Gump Running")
 
+[![Analytics](https://ga-beacon.appspot.com/UA-39980089-6/Gruppio/Run-Forrest-Run)](https://github.com/igrigorik/ga-beacon)
+
 # Run Forrest Run
 #### Run Shell Commands in Swift
 
