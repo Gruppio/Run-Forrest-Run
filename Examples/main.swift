@@ -8,13 +8,10 @@
 
 import Foundation
 
-let forrest = Forrest()
+let forrest     = Forrest()
+let pwd         = forrest.run("pwd").stdout
+let swiftFiles  = forrest.run("ls | grep swift").stdout
 
-let pwd = forrest.run("pwd")
-let out = forrest.run("ls -la | grep swift")
-
-if let out = out.stdout, pwd = pwd.stdout {
-    print(out)
+if let pwd = pwd, swiftFiles = swiftFiles {
+    print("Swift Files in \(pwd) \(swiftFiles)")
 }
-
-print("Done")
