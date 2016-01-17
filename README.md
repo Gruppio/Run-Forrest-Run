@@ -1,6 +1,6 @@
 ![alt Echolor](https://raw.github.com/Gruppio/Run-Forrest-Run/assets/RunForrestRun_(Stupid).png "Forrest Gump Running")
 
-[![CI Status](http://img.shields.io/travis/Michele Gruppioni/Run-Forrest-Run.svg?style=flat)](https://travis-ci.org/Michele Gruppioni/Run-Forrest-Run)
+[![CI Status](http://img.shields.io/travis/Gruppio/Run-Forrest-Run.svg?style=flat)](https://travis-ci.org/Gruppio/Run-Forrest-Run)
 [![Version](https://img.shields.io/cocoapods/v/Forrest.svg?style=flat)](http://cocoapods.org/pods/Forrest)
 [![License](https://img.shields.io/cocoapods/l/Forrest.svg?style=flat)](http://cocoapods.org/pods/Forrest)
 [![Platform](https://img.shields.io/cocoapods/p/Forrest.svg?style=flat)](http://cocoapods.org/pods/Forrest)
