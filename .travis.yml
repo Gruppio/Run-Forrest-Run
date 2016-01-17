@@ -1,0 +1,13 @@
+language: objective-c
+ 
+branches:
+ only:
+ - master
+ 
+xcode_project: Run-Forrest-Run.xcodeproj
+xcode_scheme: Run-Forrest-Run-Tests
+osx_image: xcode7.2
+xcode_sdk: macosx10.11 
+ 
+script:
+- xcodebuild clean build test -project Run-Forrest-Run.xcodeproj -scheme Run-Forrest-Run-Tests
