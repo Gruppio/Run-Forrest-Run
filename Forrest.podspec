@@ -17,16 +17,20 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+- Execute any Shell Command in your Swift Scripts
+- Super Easy to use
+- Pipe commands easly
+- < 1000 lines of code
                        DESC
 
-  s.homepage         = "https://github.com/Gruppio/Forrest"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/Gruppio/Run-Forrest-Run"
+  s.screenshots     = "https://raw.github.com/Gruppio/Run-Forrest-Run/assets/RunForrestRun_(Stupid).png"
   s.license          = 'MIT'
   s.author           = { "Michele Gruppioni" => "gruppiofigo@gmail.com" }
-  s.source           = { :git => "https://github.com/Gruppio/Forrest.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/Gruppio/Run-Forrest-Run.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.platform     = :osx
+  s.platform     = :osx, "10.9"
   s.requires_arc = true
 
   s.source_files = 'Sources/*'
