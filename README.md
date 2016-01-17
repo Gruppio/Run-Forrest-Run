@@ -1,5 +1,9 @@
 ![alt Echolor](https://raw.github.com/Gruppio/Run-Forrest-Run/assets/RunForrestRun_(Stupid).png "Forrest Gump Running")
 
+[![CI Status](http://img.shields.io/travis/Michele Gruppioni/Forrest.svg?style=flat)](https://travis-ci.org/Michele Gruppioni/Forrest)
+[![Version](https://img.shields.io/cocoapods/v/Forrest.svg?style=flat)](http://cocoapods.org/pods/Forrest)
+[![License](https://img.shields.io/cocoapods/l/Forrest.svg?style=flat)](http://cocoapods.org/pods/Forrest)
+[![Platform](https://img.shields.io/cocoapods/p/Forrest.svg?style=flat)](http://cocoapods.org/pods/Forrest)
 [![Analytics](https://ga-beacon.appspot.com/UA-39980089-6/Gruppio/Run-Forrest-Run)](https://github.com/igrigorik/ga-beacon)
 
 # Run Forrest Run
@@ -37,7 +41,18 @@ swift build
 ## How to Install:
 You can install Commander with SPM (Swift Package Manager)
 
+Forrest is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
-## Info:
-- Inspired by Swiftline
+```ruby
+pod "Forrest"
+```
+
+## Author:
 - Developed by Michele Gruppioni
+- Inspired by Swiftline
+
+## License
+
+Forrest is available under the MIT license. See the LICENSE file for more info.
+
