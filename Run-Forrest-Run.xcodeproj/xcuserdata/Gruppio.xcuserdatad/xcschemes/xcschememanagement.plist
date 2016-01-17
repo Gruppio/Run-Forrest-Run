@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Run-Forrest-Run-Tests.xcscheme</key>
+		<key>Run-Forrest-Run-Tests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Run-Forrest-Run.xcscheme</key>
+		<key>Run-Forrest-Run.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
