@@ -10,7 +10,6 @@
 		9010D7871C4968EC00F577D9 /* CommandFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010D7861C4968EC00F577D9 /* CommandFactory.swift */; };
 		9010D7881C4968EC00F577D9 /* CommandFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010D7861C4968EC00F577D9 /* CommandFactory.swift */; };
 		90A9F9B31C45A85E00D32E4A /* Forrest-Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A9F9B21C45A85E00D32E4A /* Forrest-Tests.swift */; };
-		90C4237D1C44777800F57B37 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90C4237B1C44777800F57B37 /* Info.plist */; };
 		90C423841C4477D500F57B37 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423831C4477D500F57B37 /* main.swift */; };
 		90C423861C44781800F57B37 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423851C44781800F57B37 /* Command.swift */; };
 		90C423871C44781800F57B37 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C423851C44781800F57B37 /* Command.swift */; };
@@ -169,7 +168,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Michele Gruppioni";
 				TargetAttributes = {
 					90C4235B1C44752400F57B37 = {
@@ -203,7 +202,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90C4237D1C44777800F57B37 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
