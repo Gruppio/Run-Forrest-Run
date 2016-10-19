@@ -16,6 +16,6 @@ public protocol Executable {
 
 
 public protocol ExecutableFactory {
-    func create(arguments: [String], stdin: String?) -> Executable
-    func create(arguments: [String]) -> Executable
+    func create(_ arguments: [String], stdin: String?) -> Executable
+    func create(_ arguments: [String]) -> Executable
 }

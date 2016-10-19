@@ -8,14 +8,14 @@
 
 Pod::Spec.new do |s|
   s.name             = "Forrest"
-  s.version          = "1.0.3"
+  s.version          = "2.0.0"
   s.summary          = "Run Shell Commands in Swift"
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
+#   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
 - Execute any Shell Command in your Swift Scripts
 - Super Easy to use
