@@ -9,14 +9,14 @@
 import Foundation
 
 
-enum TaskExecutorError : ErrorType {
-    case InvalidLaunchPath(launchPath: String)
-    case InvalidArguments(arguments: [String]?)
+enum TaskExecutorError : Error {
+    case invalidLaunchPath(launchPath: String)
+    case invalidArguments(arguments: [String]?)
 }
 
 
 /// This class has the responsability to execute a Command
-public class TaskExecutor {
+open class TaskExecutor {
     var launchPath: String
     
     init(launchPath: String) {
@@ -33,24 +33,24 @@ public class TaskExecutor {
 
 extension TaskExecutor : Executor {
     
-    public func execute(executable: Executable) throws -> ExecutionResult {
+    public func execute(_ executable: Executable) throws -> ExecutionResult {
         
         guard let arguments = (executable as? Argumented)?.arguments else {
-            throw TaskExecutorError.InvalidArguments(arguments: nil)
+            throw TaskExecutorError.invalidArguments(arguments: nil)
         }
         
         guard !launchPath.isEmpty else {
-            throw TaskExecutorError.InvalidLaunchPath(launchPath: launchPath)
+            throw TaskExecutorError.invalidLaunchPath(launchPath: launchPath)
         }
         
         guard !arguments.isEmpty else {
-            throw TaskExecutorError.InvalidArguments(arguments: arguments)
+            throw TaskExecutorError.invalidArguments(arguments: arguments)
         }
         
-        let task            = NSTask()
-        let stdinPipe       = NSPipe()
-        let stdoutPipe      = NSPipe()
-        let stderrPipe      = NSPipe()
+        let task            = Process()
+        let stdinPipe       = Pipe()
+        let stdoutPipe      = Pipe()
+        let stderrPipe      = Pipe()
         
         task.launchPath     = launchPath
         task.arguments      = arguments
@@ -76,16 +76,16 @@ extension TaskExecutor : Executor {
 
 // MARK: - NSPipe Extension
 
-extension NSPipe {
+extension Pipe {
     func read() -> String? {
-        return String(data: self.fileHandleForReading.availableData, encoding: NSUTF8StringEncoding)
+        return String(data: self.fileHandleForReading.availableData, encoding: String.Encoding.utf8)
     }
     
-    func write(str: String) {
-        guard let data = str.dataUsingEncoding(NSUTF8StringEncoding) else {
+    func write(_ str: String) {
+        guard let data = str.data(using: String.Encoding.utf8) else {
             return
         }
-        self.fileHandleForWriting.writeData(data)
+        self.fileHandleForWriting.write(data)
         self.fileHandleForWriting.closeFile()
     }
 }

@@ -9,8 +9,8 @@
 import Foundation
 
 /// My Momma always said: Forrest Run Shell Commands in Swift
-public class Forrest {
-    public var executableFactory: ExecutableFactory
+open class Forrest {
+    open var executableFactory: ExecutableFactory
     
     init(executableFactory: ExecutableFactory) {
         self.executableFactory = executableFactory
@@ -24,7 +24,7 @@ public class Forrest {
     - parameter command: A Shell Command or multiple Piped Shell Commands ( ex: "ls -la | grep swift" )
     - returns: The Command Result
     */
-    public func run(command: String) -> ExecutionResult {
+    open func run(_ command: String) -> ExecutionResult {
         return executeArguments(splitArguments(command))
     }
     
@@ -34,7 +34,7 @@ public class Forrest {
      - parameter arguments: All the Shell Command Arguments including the command name ( ex: ["ls", "-la"] )
      - returns: The Command Result
      */
-    public func run(arguments arguments: String...) -> ExecutionResult {
+    open func run(arguments: String...) -> ExecutionResult {
         return executeArguments([arguments])
     }
     
@@ -44,7 +44,7 @@ public class Forrest {
      - parameter arguments: Multiple Shell Command Arguments including the commands name ( ex: [["ls", "-la"], ["grep", "swift"]] )
      - returns: The Command Result
      */
-    public func run(arguments arguments: [String]...) -> ExecutionResult {
+    open func run(arguments: [String]...) -> ExecutionResult {
         return executeArguments(arguments)
     }
     
@@ -54,7 +54,7 @@ public class Forrest {
      - parameter executables: An Executable object
      - returns: The Command Result
     */
-    public func run(executables executable: Executable) -> ExecutionResult {
+    open func run(executables executable: Executable) -> ExecutionResult {
         return executeExecutables([executable])
     }
     
@@ -64,25 +64,26 @@ public class Forrest {
      - parameter executables: An Executables objects list
      - returns: The Command Result
      */
-    public func run(executables executable: Executable...) -> ExecutionResult {
+    open func run(executables executable: Executable...) -> ExecutionResult {
         return executeExecutables(executable)
     }
     
-    private func executeArguments(argumentsList: [[String]]) -> ExecutionResult {
+    fileprivate func executeArguments(_ argumentsList: [[String]]) -> ExecutionResult {
         return executeExecutables(argumentsList.map(executableFactory.create))
     }
     
-    private func executeExecutables(executables: [Executable]) -> ExecutionResult {
+    fileprivate func executeExecutables(_ executables: [Executable]) -> ExecutionResult {
         do {
-            return try executables.reduce(ExecutionResult(stdout: executables.first?.stdin)) { (prevExecutionResult, var executable) -> ExecutionResult in
+            return try executables.reduce(ExecutionResult(stdout: executables.first?.stdin)) { (prevExecutionResult, executable) -> ExecutionResult in
+                var executable = executable
                 executable.stdin = prevExecutionResult.stdout // Pipe
                 return try executable.execute()
             }
         }
-        catch TaskExecutorError.InvalidArguments(arguments: let arguments) {
+        catch TaskExecutorError.invalidArguments(arguments: let arguments) {
             return ExecutionResult(stderr: "Forrest: TaskExecutor: Invalid Arguments: \(arguments)")
         }
-        catch TaskExecutorError.InvalidLaunchPath(launchPath: let launchPath) {
+        catch TaskExecutorError.invalidLaunchPath(launchPath: let launchPath) {
             return ExecutionResult(stderr: "Forrest: TaskExecutor: Invalid launchPath: \(launchPath)")
         }
         catch {
@@ -92,8 +93,8 @@ public class Forrest {
     
     // TODO: Move this in to a class
     let splitArguments = { (command: String) -> [[String]] in
-        return command.componentsSeparatedByString("|")
-            .map() { $0.componentsSeparatedByString(" ").filter() { !$0.isEmpty } }
+        return command.components(separatedBy: "|")
+            .map() { $0.components(separatedBy: " ").filter() { !$0.isEmpty } }
             .filter() { !$0.isEmpty }
     }
     

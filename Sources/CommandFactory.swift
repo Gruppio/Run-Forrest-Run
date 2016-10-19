@@ -19,11 +19,11 @@ public struct CommandFactory : ExecutableFactory {
         self.executor = executor
     }
     
-    public func create(arguments: [String], stdin: String?) -> Executable {
+    public func create(_ arguments: [String], stdin: String?) -> Executable {
         return Command(arguments: arguments, executor: executor, stdin: stdin)
     }
     
-    public func create(arguments: [String]) -> Executable {
+    public func create(_ arguments: [String]) -> Executable {
         return create(arguments, stdin: nil)
     }
 }
