@@ -35,5 +35,4 @@ public struct Command : Executable, Argumented {
     public func execute() throws -> ExecutionResult {
         return try executor.execute(self)
     }
-
 }

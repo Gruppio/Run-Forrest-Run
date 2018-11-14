@@ -74,9 +74,10 @@ public class Forrest {
     
     private func executeExecutables(executables: [Executable]) -> ExecutionResult {
         do {
-            return try executables.reduce(ExecutionResult(stdout: executables.first?.stdin)) { (prevExecutionResult, var executable) -> ExecutionResult in
-                executable.stdin = prevExecutionResult.stdout // Pipe
-                return try executable.execute()
+            return try executables.reduce(ExecutionResult(stdout: executables.first?.stdin)) { (prevExecutionResult, executable) -> ExecutionResult in
+                var realExecutable = executable
+                realExecutable.stdin = prevExecutionResult.stdout // Pipe
+                return try realExecutable.execute()
             }
         }
         catch TaskExecutorError.InvalidArguments(arguments: let arguments) {
